@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Luke Strong</title>
+  <meta name="description" content="Get in touch with Luke Strong." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-name">Luke Strong</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="writing.html">Writing</a>
+        <a href="now.html">Now</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">◐</button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <header class="page-header">
+        <span class="mono-label">Get in touch</span>
+        <h1>Contact</h1>
+        <p class="page-intro">
+          I'm always open to conversations about psychedelic and cannabis policy,
+          advocacy communications, and research collaboration — especially with
+          organizations doing meaningful work on access and reform.
+        </p>
+      </header>
+
+      <div class="contact-body">
+
+        <div class="contact-links">
+          <a href="mailto:lukestrong47@gmail.com" class="contact-link">
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-value">lukestrong47@gmail.com</span>
+          </a>
+          <a href="https://linkedin.com/in/lukestro" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-label">LinkedIn</span>
+            <span class="contact-link-value">linkedin.com/in/lukestro</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 Luke Strong</span>
+      <div class="footer-links">
+        <a href="mailto:lukestrong47@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/lukestro" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const stored = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', stored);
+    toggle.textContent = stored === 'dark' ? '◐' : '◑';
+    toggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      toggle.textContent = next === 'dark' ? '◐' : '◑';
+    });
+  </script>
+
+</body>
+</html>

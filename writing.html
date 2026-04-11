@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writing — Luke Strong</title>
+  <meta name="description" content="Essays and personal writing by Luke Strong on psychedelic policy, philosophy, and reform." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-name">Luke Strong</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="writing.html" class="active">Writing</a>
+        <a href="now.html">Now</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">◐</button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <header class="page-header">
+        <span class="mono-label">Personal</span>
+        <h1>Writing</h1>
+        <p class="page-intro">
+          Things written in my own voice. Reports and policy publications live on
+          the <a href="projects.html">Projects</a> page.
+        </p>
+      </header>
+
+      <div class="writing-body">
+
+        <!-- DISSERTATION + TALK -->
+        <section class="writing-section">
+          <div class="writing-section-title">Dissertation</div>
+
+          <h2 class="dissertation-title">The Psychedelic Experience as a Sublime Aesthetic</h2>
+          <p class="dissertation-meta">Queen's University Belfast · 2025 · Monsignor Arthur H. Ryan Award</p>
+          <p class="dissertation-desc">
+            My undergraduate dissertation draws on Kant's and Burke's accounts of the sublime
+            to analyse the structure of the psychedelic experience — its vastness, its dissolution
+            of boundaries, and its mixture of terror and transcendence. It was awarded the
+            Monsignor Arthur H. Ryan Prize for the highest final mark in undergraduate philosophy
+            and presented at PsychedelX 2025, the largest student psychedelics conference.
+          </p>
+
+          <div class="talk-output">
+            <span class="talk-output-label">Read &amp; Watch</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;">
+              <a href="#" class="output-link">Read Dissertation →</a>
+              <a
+                href="https://www.youtube.com/watch?v=IZuRVESFqMg"
+                target="_blank"
+                rel="noopener"
+                class="output-link">
+                PsychedelX Talk on YouTube →
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ESSAYS -->
+        <section class="writing-section">
+          <div class="writing-section-title">Essays</div>
+          <div class="substack-block">
+            <span class="substack-block-label">Coming soon</span>
+            <p class="substack-block-text">
+              A periodic essay feed on psychedelic policy, philosophy, and the ideas
+              that don't fit neatly into a policy report. Substack integration coming soon.
+            </p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 Luke Strong</span>
+      <div class="footer-links">
+        <a href="mailto:lukestrong47@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/lukestro" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const stored = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', stored);
+    toggle.textContent = stored === 'dark' ? '◐' : '◑';
+    toggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      toggle.textContent = next === 'dark' ? '◐' : '◑';
+    });
+  </script>
+
+</body>
+</html>

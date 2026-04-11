@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Now — Luke Strong</title>
+  <meta name="description" content="What Luke Strong is working on right now." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-name">Luke Strong</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="writing.html">Writing</a>
+        <a href="now.html" class="active">Now</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">◐</button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <header class="page-header">
+        <span class="mono-label">Updated periodically</span>
+        <h1>Now</h1>
+        <p class="page-intro">
+          A snapshot of what I'm working on, reading, and thinking about.
+          Inspired by <a href="https://nownownow.com/about" target="_blank" rel="noopener">nownownow.com</a>.
+        </p>
+      </header>
+
+      <div class="now-body">
+
+        <p class="now-meta">Last updated — April 2026</p>
+
+        <section class="now-section">
+          <h2>Working on</h2>
+          <p>
+            At the <strong>Center for Psychedelic Policy</strong>, I'm deep in the research
+            phase of a policy report making the fiscal and legislative case for Medicaid
+            coverage of psilocybin-assisted therapy. Oregon's 2027 session is the target —
+            the goal is to have something in front of the right people well before then.
+          </p>
+          <p>
+            At the <strong>Intercollegiate Psychedelics Network</strong>, I'm building out the
+            membership infrastructure: the platform, the onboarding flow, the communications
+            cadence. The scaffolding is taking shape.
+          </p>
+        </section>
+
+        <section class="now-section">
+          <h2>Learning</h2>
+          <p>
+            [Placeholder — what are you actively learning or working to get better at?
+            Could be a skill, a subject area, a tool, or something more personal.]
+          </p>
+        </section>
+
+        <section class="now-section">
+          <h2>Reading</h2>
+
+          <div class="now-book">
+            <div class="now-book-label">Now</div>
+            <div>
+              <div class="now-book-title">I Feel Love</div>
+              <div class="now-book-author">Rachel Nuwer</div>
+            </div>
+          </div>
+
+          <div class="now-book">
+            <div class="now-book-label">On deck</div>
+            <div>
+              <div class="now-book-title">The Coddling of the American Mind</div>
+              <div class="now-book-author">Jonathan Haidt and Greg Lukianoff</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="now-section">
+          <h2>Thinking about</h2>
+          <p>
+            [Placeholder — a recurring idea, question, or problem occupying your mind right now.
+            Doesn't have to be work-related. Update this whenever something feels worth sharing.]
+          </p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 Luke Strong</span>
+      <div class="footer-links">
+        <a href="mailto:lukestrong47@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/lukestro" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const stored = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', stored);
+    toggle.textContent = stored === 'dark' ? '◐' : '◑';
+    toggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      toggle.textContent = next === 'dark' ? '◐' : '◑';
+    });
+  </script>
+
+</body>
+</html>

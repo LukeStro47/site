@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luke Strong</title>
+  <meta name="description" content="Policy researcher and communications strategist focused on psychedelic and cannabis policy." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-name">Luke Strong</a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="writing.html">Writing</a>
+        <a href="now.html">Now</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">◐</button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <!-- HERO — photo left of tagline + heading -->
+      <section class="home-hero">
+        <div class="home-hero-inner">
+          <div class="home-photo">
+            <img src="assets/headshot.jpg" alt="Luke Strong" />
+          </div>
+          <div class="home-hero-text">
+            <p class="home-tagline">Psychedelic Policy and Strategy</p>
+            <h1>Rethinking drug<br>policy for the better.</h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT — text only, breathes on its own -->
+      <section class="home-about">
+        <p>
+          Hey! I'm Luke Strong, a policy researcher and communications strategist
+          focused on helping advocacy organizations and start-ups navigate the cannabis
+          and psychedelic industries. I've spent over two years working within these
+          spaces, and I'm passionately dedicated to ensuring that these substances are
+          integrated into healthcare systems.
+        </p>
+        <p>
+          Though originally from New Jersey, I completed my undergrad abroad in Belfast
+          and am returning to the UK in Autumn 2026 for a one-year MSc in Public Policy
+          and Management at King's College London.
+        </p>
+        <p>
+          I'm currently working on a range of projects for the
+          <a href="projects.html">Center for Psychedelic Policy</a>,
+          the <a href="projects.html">Intercollegiate Psychedelics Network</a>,
+          and <a href="projects.html">Psilonautica</a>.
+          Feel free to reach out if you're interested in any of my work —
+          always happy to connect or collaborate!
+        </p>
+      </section>
+
+      <hr class="home-divider" />
+
+      <!-- VALUES -->
+      <section class="home-values">
+        <h2>Values</h2>
+        <ul class="values-list">
+          <li>
+            <p><strong>Research shouldn't live on a shelf.</strong> Research of any form should create a path towards action.</p>
+          </li>
+          <li>
+            <p><strong>Think philosophically.</strong> The hardest questions in any field are often philosophy problems in disguise.</p>
+          </li>
+          <li>
+            <p><strong>Crave discomfort.</strong> Jumping head-first into new things is the best way to learn about yourself.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="home-education">
+        <h2>Education</h2>
+        <ul class="edu-list">
+          <li class="edu-item">
+            <div class="edu-year">2026 →</div>
+            <div>
+              <div class="edu-school">King's College London</div>
+              <div class="edu-degree">MSc Public Policy and Management</div>
+            </div>
+          </li>
+          <li class="edu-item">
+            <div class="edu-year">2022–25</div>
+            <div>
+              <div class="edu-school">Queen's University Belfast</div>
+              <div class="edu-degree">BA Philosophy — First Class Honours</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- RECOGNITION -->
+      <section class="home-recognition">
+        <h2>Recognition</h2>
+        <ul class="recognition-list">
+          <li>
+            <span class="recognition-year">2025</span>
+            <span>Monsignor Arthur H. Ryan Award — highest final mark in undergraduate philosophy, Queen's University Belfast</span>
+          </li>
+          <li>
+            <span class="recognition-year">2025</span>
+            <span>Selected speaker, PsychedelX — presented dissertation at the largest student psychedelics conference</span>
+          </li>
+          <li>
+            <span class="recognition-year">2024</span>
+            <span>Foundation Scholarship — awarded to students with the six highest GPAs in 2nd year, School of HAPP</span>
+          </li>
+          <li>
+            <span class="recognition-year">2024</span>
+            <span>Philosophy 2nd Year Award — highest average grade in 2nd year philosophy</span>
+          </li>
+          <li>
+            <span class="recognition-year">2023</span>
+            <span>Patrick Campbell Award — highest average grade in 1st year philosophy</span>
+          </li>
+          <li>
+            <span class="recognition-year">2022</span>
+            <span>K. Kiki Konstantinos Scholarship — awarded for academic and extracurricular achievement</span>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 Luke Strong</span>
+      <div class="footer-links">
+        <a href="mailto:lukestrong47@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/lukestro" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const stored = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', stored);
+    toggle.textContent = stored === 'dark' ? '◐' : '◑';
+    toggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      toggle.textContent = next === 'dark' ? '◐' : '◑';
+    });
+  </script>
+
+</body>
+</html>
