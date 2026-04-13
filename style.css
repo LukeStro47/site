@@ -14,8 +14,8 @@
   --bg:           #0d0c0a;
   --bg-card:      #131210;
   --text:         #e8e4dc;
-  --text-muted:   #7c7870;
-  --text-subtle:  #3e3c38;
+  --text-muted:   #908c86;
+  --text-subtle:  #524f4b;
   --accent:       #c0a96a;
   --border:       #232018;
   --max-width:    700px;
@@ -164,6 +164,7 @@ nav {
   color: var(--text);
 }
 
+/* Theme toggle — lives in footer */
 .theme-toggle {
   background: none;
   border: 1px solid var(--border);
@@ -186,13 +187,45 @@ nav {
   border-color: var(--text-muted);
 }
 
+/* Hamburger — visible on mobile only */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.hamburger-line {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--text-muted);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-hamburger.is-active .hamburger-line:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav-hamburger.is-active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.nav-hamburger.is-active .hamburger-line:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
 /* ---- SHARED LABEL ---- */
 .mono-label {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--text-subtle);
+  color: var(--text-muted);
   display: block;
 }
 
@@ -224,20 +257,22 @@ nav {
   border-bottom: 1px solid var(--border);
 }
 
-/* Photo sits beside the tagline + heading */
+/* Photo sits beside the tagline + heading, height matches text column */
 .home-hero-inner {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 2.25rem;
 }
 
 .home-photo {
   flex-shrink: 0;
+  display: flex;
 }
 
 .home-photo img {
   width: 108px;
-  height: 135px;
+  height: 100%;
+  min-height: 130px;
   object-fit: cover;
   object-position: center top;
   display: block;
@@ -395,6 +430,12 @@ nav {
 .role-card {
   padding: 3rem 0 0;
   border-top: 1px solid var(--border);
+}
+
+/* Remove double line above the first card (page-header already has border-bottom) */
+.role-card:first-child {
+  border-top: none;
+  padding-top: 0;
 }
 
 .work-org {
@@ -565,6 +606,53 @@ nav {
 /* Smooth open/close animation */
 .accordion-panel[data-animating] {
   overflow: hidden;
+}
+
+/* Prose blocks inside accordion body */
+.prose-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.prose-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin-bottom: 0.625rem;
+}
+
+.prose-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  display: block;
+}
+
+.prose-block p {
+  font-size: 0.9375rem;
+  line-height: 1.82;
+  color: var(--text);
+  margin-bottom: 0;
+}
+
+/* Numbered learned list */
+.learned-list {
+  list-style: decimal;
+  padding-left: 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.82;
+  color: var(--text);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 /* ==============================================
@@ -840,6 +928,13 @@ footer {
   letter-spacing: 0.06em;
 }
 
+/* Toggle + links grouped on the right */
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
 .footer-links {
   display: flex;
   gap: 1.25rem;
@@ -862,16 +957,44 @@ footer {
 /* ==============================================
    RESPONSIVE
    ============================================== */
-@media (max-width: 600px) {
+@media (max-width: 640px) {
+  /* Hamburger visible, nav links collapse */
+  .nav-hamburger {
+    display: flex;
+  }
+
   .nav-links {
-    gap: 1rem;
+    display: none;
+    position: fixed;
+    top: 57px;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 0;
+    padding: 0 1.5rem;
+    z-index: 99;
+  }
+
+  .nav-links.is-open {
+    display: flex;
   }
 
   .nav-links a {
-    font-size: 0.625rem;
+    font-size: 0.8125rem;
     letter-spacing: 0.06em;
+    padding: 0.875rem 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
   }
 
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 500px) {
   .contact-link {
     grid-template-columns: 70px 1fr;
     gap: 1rem;
@@ -882,27 +1005,11 @@ footer {
     gap: 0.875rem;
   }
 
-  .project-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.375rem;
-  }
-
-  .project-row-output {
-    text-align: left;
-  }
-}
-
-@media (max-width: 440px) {
-  .nav-name {
-    font-size: 0.875rem;
-  }
-
-  .nav-links {
-    gap: 0.75rem;
-  }
-
   h1 {
     font-size: 2rem;
+  }
+
+  .home-photo img {
+    width: 80px;
   }
 }

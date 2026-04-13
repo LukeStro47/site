@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -24,14 +24,18 @@
         <a href="now.html">Now</a>
         <a href="contact.html">Contact</a>
       </div>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">◐</button>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
   </nav>
 
   <main>
     <div class="container">
 
-      <!-- HERO — photo left of tagline + heading -->
+      <!-- HERO — photo left of tagline + heading, stretches to match text height -->
       <section class="home-hero">
         <div class="home-hero-inner">
           <div class="home-photo">
@@ -44,7 +48,7 @@
         </div>
       </section>
 
-      <!-- ABOUT — text only, breathes on its own -->
+      <!-- ABOUT -->
       <section class="home-about">
         <p>
           Hey! I'm Luke Strong, a policy researcher and communications strategist
@@ -81,7 +85,7 @@
             <p><strong>Think philosophically.</strong> The hardest questions in any field are often philosophy problems in disguise.</p>
           </li>
           <li>
-            <p><strong>Crave discomfort.</strong> Jumping head-first into new things is the best way to learn about yourself.</p>
+            <p><strong>Crave discomfort.</strong> Non-linear paths may carry uncertainty, but they also bring about substantial growth.</p>
           </li>
         </ul>
       </section>
@@ -101,7 +105,7 @@
             <div class="edu-year">2022–25</div>
             <div>
               <div class="edu-school">Queen's University Belfast</div>
-              <div class="edu-degree">BA Philosophy — First Class Honours</div>
+              <div class="edu-degree">BA Philosophy</div>
             </div>
           </li>
         </ul>
@@ -144,24 +148,43 @@
   <footer>
     <div class="footer-inner">
       <span class="footer-copy">© 2026 Luke Strong</span>
-      <div class="footer-links">
-        <a href="mailto:lukestrong47@gmail.com">Email</a>
-        <a href="https://linkedin.com/in/lukestro" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="footer-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">◐</button>
+        <div class="footer-links">
+          <a href="mailto:lukestrong47@gmail.com">Email</a>
+          <a href="https://linkedin.com/in/lukestro" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
-    const toggle = document.getElementById('themeToggle');
     const html = document.documentElement;
     const stored = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', stored);
-    toggle.textContent = stored === 'dark' ? '◐' : '◑';
-    toggle.addEventListener('click', () => {
+
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.textContent = stored === 'dark' ? '◐' : '◑';
+    themeToggle.addEventListener('click', () => {
       const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
-      toggle.textContent = next === 'dark' ? '◐' : '◑';
+      themeToggle.textContent = next === 'dark' ? '◐' : '◑';
+    });
+
+    const hamburger = document.getElementById('navHamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('is-open');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      hamburger.classList.toggle('is-active', isOpen);
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.classList.remove('is-active');
+      });
     });
   </script>
 

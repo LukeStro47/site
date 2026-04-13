@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -24,7 +24,11 @@
         <a href="now.html">Now</a>
         <a href="contact.html">Contact</a>
       </div>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">◐</button>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
   </nav>
 
@@ -35,65 +39,12 @@
         <span class="mono-label">Work</span>
         <h1>Projects</h1>
         <p class="page-intro">
-          Roles and the projects that came out of them — with the deliverables attached.
+          Listed below are a number of projects I have spearheaded. Deliverables
+          are attached, if not still in progress. Click on each project to read more.
         </p>
       </header>
 
       <div class="projects-list">
-
-        <!-- ══════════════════════════════
-             CENTER FOR PSYCHEDELIC POLICY
-        ═══════════════════════════════ -->
-        <div class="role-card">
-          <div class="work-org">Center for Psychedelic Policy</div>
-          <div class="work-role">Policy Researcher</div>
-          <div class="work-date">July 2025 — Present</div>
-          <p class="role-description">
-            Making the fiscal and legislative case for expanded access to psilocybin-assisted
-            therapy in the United States, with a focus on Oregon's 2027 Medicaid session.
-            Alongside research, developing email campaigns and fundraising strategy.
-          </p>
-
-          <span class="role-projects-label">Projects</span>
-
-          <div class="accordion-item">
-            <button class="accordion-trigger" aria-expanded="false">
-              <span class="project-row-name">Design &amp; Advocacy of Medicaid Pilot</span>
-              <div class="accordion-trigger-right">
-                <span class="coming-soon">Coming soon</span>
-                <span class="accordion-icon" aria-hidden="true">+</span>
-              </div>
-            </button>
-            <div class="accordion-panel" hidden>
-              <div class="accordion-body">
-                <div class="prose-block">
-                  <span class="prose-label">Why</span>
-                  <p>
-                    Psilocybin-assisted therapy is legal in Oregon, but access is effectively
-                    limited to those who can pay out of pocket. The 2027 legislative session
-                    is the window to change that — and the argument needs to be fiscal and
-                    legislative, not just moral.
-                  </p>
-                </div>
-                <div class="prose-block">
-                  <span class="prose-label">How</span>
-                  <p>
-                    Co-authoring a policy report synthesizing cost-effectiveness data from
-                    Oregon Psilocybin Services, mapping the state's behavioral health landscape,
-                    and constructing the case for integrating PAT within existing Medicaid
-                    structures. Alongside research, developing CPP's email campaigns and
-                    contributing to fundraising strategy — translating technical work into
-                    communications that reach donors and decision-makers.
-                  </p>
-                </div>
-                <div class="prose-block">
-                  <span class="prose-label">What I learned</span>
-                  <p>[Placeholder — update with reflection when ready.]</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <!-- ══════════════════════════════
              INTERCOLLEGIATE PSYCHEDELICS NETWORK
@@ -103,17 +54,18 @@
           <div class="work-role">Membership and Outreach Coordinator</div>
           <div class="work-date">February 2026 — Present</div>
           <p class="role-description">
-            Building IPN's membership infrastructure from scratch — mapping the user journey,
-            identifying bottlenecks, and creating a platform that can support community growth
-            across a distributed student network.
+            The Intercollegiate Psychedelics Network is a nonprofit connecting students
+            within the psychedelic space. In this role, I am responsible for ensuring
+            the best member experience, making the promise of connection a reality.
           </p>
 
-          <span class="role-projects-label">Projects</span>
+          <span class="role-projects-label">Key Projects</span>
 
           <div class="accordion-item">
             <button class="accordion-trigger" aria-expanded="false">
               <span class="project-row-name">Building Member Infrastructure</span>
               <div class="accordion-trigger-right">
+                <span class="coming-soon">In progress</span>
                 <span class="accordion-icon" aria-hidden="true">+</span>
               </div>
             </button>
@@ -122,24 +74,86 @@
                 <div class="prose-block">
                   <span class="prose-label">Why</span>
                   <p>
-                    IPN had genuine energy behind it — a growing network of student chapters
-                    with real momentum — but no infrastructure to match. The gap between
-                    enthusiasm and systems was the thing worth solving.
+                    IPN has strong energy behind it, with students excited about its
+                    potential. However, it lacks the infrastructure to support growing
+                    membership, leading to limited engagement and community.
                   </p>
                 </div>
                 <div class="prose-block">
                   <span class="prose-label">How</span>
                   <p>
-                    Started by mapping the full user journey from initial discovery through
-                    ongoing engagement, identifying where people were dropping off or going
-                    unsupported. Building a unified membership platform around those
-                    bottlenecks: onboarding flows, communication cadence, and retention
-                    tools for a distributed student community.
+                    I'm working with the leadership team to build a member portal,
+                    which will pull all disparate engagement streams — Discord, webinars,
+                    community resources, etc. — into one platform. The final product will
+                    likely be vibe-coded using Claude Code.
                   </p>
                 </div>
                 <div class="prose-block">
-                  <span class="prose-label">What I learned</span>
-                  <p>[Placeholder — update with reflection when ready.]</p>
+                  <span class="prose-label">What I Learned</span>
+                  <ol class="learned-list">
+                    <li>I'm building my vibe-coding proficiency with basic projects and bite-sized components of the platform.</li>
+                    <li>Don't build something a community won't use. Survey members first and consistently, using that data as a guide.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════
+             CENTER FOR PSYCHEDELIC POLICY
+        ═══════════════════════════════ -->
+        <div class="role-card">
+          <div class="work-org">Center for Psychedelic Policy</div>
+          <div class="work-role">Policy Researcher</div>
+          <div class="work-date">July 2025 — Present</div>
+          <p class="role-description">
+            The Center for Psychedelic Policy is a new (&lt;1 year old) nonprofit committed
+            to expanding access to psychedelic therapies, ensuring that they become accessible
+            treatment options for those who currently can't afford them. Working at the
+            Center, I've undertaken a wide range of tasks beyond policy research, including
+            email marketing and fundraising strategy.
+          </p>
+
+          <span class="role-projects-label">Key Projects</span>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="project-row-name">Design &amp; Advocacy of Medicaid Pilot</span>
+              <div class="accordion-trigger-right">
+                <span class="coming-soon">In progress</span>
+                <span class="accordion-icon" aria-hidden="true">+</span>
+              </div>
+            </button>
+            <div class="accordion-panel" hidden>
+              <div class="accordion-body">
+                <div class="prose-block">
+                  <span class="prose-label">Why</span>
+                  <p>
+                    Psilocybin therapy has been available in Oregon since 2023, but access
+                    is limited to those who can pay out of pocket. Oregon service centers are
+                    suffering, and potential clients continue to suffer from mental health
+                    conditions. The 2027 Oregon legislative session gives us a window to
+                    reframe the discussion around Oregon Psilocybin Services.
+                  </p>
+                </div>
+                <div class="prose-block">
+                  <span class="prose-label">How</span>
+                  <p>
+                    I'm currently co-authoring a report about the behavioral health crisis
+                    in Oregon and the opportunity for integrating psilocybin-assisted therapy
+                    into existing treatment structures. Particularly, we're focused on
+                    demonstrating the cost-effectiveness of psilocybin when compared to
+                    current investments. This report and its pilot design will serve as a
+                    blueprint for legislators.
+                  </p>
+                </div>
+                <div class="prose-block">
+                  <span class="prose-label">What I Learned</span>
+                  <ol class="learned-list">
+                    <li>Don't rebuild policies from the ground up. Instead, find creative ways for current infrastructure to achieve future goals.</li>
+                    <li>Convene stakeholders and experts early. Let them gut-check your work and rip it to shreds before moving on.</li>
+                  </ol>
                 </div>
               </div>
             </div>
@@ -154,12 +168,12 @@
           <div class="work-role">Student Ambassador</div>
           <div class="work-date">July 2024 — January 2026</div>
           <p class="role-description">
-            Broadening the UK cannabis policy conversation through a podcast that brought
-            senior industry voices to a wider audience, and two policy reports aimed at
-            parliamentary and patient audiences.
+            The Cannabis Industry Council is a trade organization for companies in the UK
+            cannabis industry. I helped to amplify the CIC's messaging by creating and
+            hosting their podcast, as well as authoring reports.
           </p>
 
-          <span class="role-projects-label">Projects</span>
+          <span class="role-projects-label">Key Projects</span>
 
           <div class="accordion-item">
             <button class="accordion-trigger" aria-expanded="false">
@@ -179,56 +193,27 @@
                 <div class="prose-block">
                   <span class="prose-label">Why</span>
                   <p>
-                    Cannabis regulation in the UK was being shaped in boardrooms and
-                    parliamentary committees — but not in public. A podcast felt like
-                    the right format to make those conversations accessible.
+                    The UK cannabis industry, spanning medical cannabis, consumer CBD,
+                    and industrial hemp, is much more complex than people realize. The
+                    CIC's interest in creating a podcast represented the kind of project
+                    I'd been looking for an excuse to take on.
                   </p>
                 </div>
                 <div class="prose-block">
                   <span class="prose-label">How</span>
                   <p>
-                    Created and hosted a series of interviews with senior figures from
-                    across the UK cannabis industry — founders, advocates, policy leads
-                    — on regulation, access, and the trajectory of reform.
+                    I built the podcast from scratch: reaching out to interviewees,
+                    recording on Zoom, editing in Audacity, and distributing through
+                    Spotify for Creators. I tried my best to use the podcast as a way
+                    to highlight the variety of work happening in the industry.
                   </p>
                 </div>
                 <div class="prose-block">
-                  <span class="prose-label">What I learned</span>
-                  <p>[Placeholder — update with reflection when ready.]</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <button class="accordion-trigger" aria-expanded="false">
-              <span class="project-row-name">Hemp and Decarbonization of the Built Environment</span>
-              <div class="accordion-trigger-right">
-                <span class="coming-soon">Coming soon</span>
-                <span class="accordion-icon" aria-hidden="true">+</span>
-              </div>
-            </button>
-            <div class="accordion-panel" hidden>
-              <div class="accordion-body">
-                <div class="prose-block">
-                  <span class="prose-label">Why</span>
-                  <p>
-                    The structural case for hemp as a building material had real policy
-                    stakes but no accessible, well-argued resource making the argument
-                    for parliamentarians.
-                  </p>
-                </div>
-                <div class="prose-block">
-                  <span class="prose-label">How</span>
-                  <p>
-                    Authored a report on hemp's potential to decarbonize the built
-                    environment — synthesizing material science, supply chain economics,
-                    and policy precedents — prepared for presentation to Members of Parliament.
-                  </p>
-                </div>
-                <div class="prose-block">
-                  <span class="prose-label">What I learned</span>
-                  <p>[Placeholder — update with reflection when ready.]</p>
+                  <span class="prose-label">What I Learned</span>
+                  <ol class="learned-list">
+                    <li>Interviewing is a skill. It takes time and experience to get more comfortable talking with guests.</li>
+                    <li>Everyone has a story to tell. In any situation, try to find it.</li>
+                  </ol>
                 </div>
               </div>
             </div>
@@ -247,23 +232,66 @@
                 <div class="prose-block">
                   <span class="prose-label">Why</span>
                   <p>
-                    UK medical cannabis patients lacked clear, accessible information
-                    about their legal rights when travelling abroad with a prescription.
-                    The gap between what patients needed to know and what was available
-                    was a practical problem worth solving.
+                    UK medical cannabis patients often don't know their rights when
+                    traveling with a prescription. This has led to an abundance of
+                    confusion and avoidable conflict with transit staff and police.
                   </p>
                 </div>
                 <div class="prose-block">
                   <span class="prose-label">How</span>
                   <p>
-                    Wrote a patient-facing guide researching country-by-country
-                    regulations, documentation requirements, and practical steps —
-                    written to be understood by patients, not lawyers.
+                    I co-authored a guide to traveling with medical cannabis, which
+                    explains existing regulations, both domestically and internationally.
+                    This involved researching laws in a number of countries and clearly
+                    detailing what patients need to know and do before they travel.
                   </p>
                 </div>
                 <div class="prose-block">
-                  <span class="prose-label">What I learned</span>
-                  <p>[Placeholder — update with reflection when ready.]</p>
+                  <span class="prose-label">What I Learned</span>
+                  <ol class="learned-list">
+                    <li>Many countries have ambiguous and confusing public-facing information on entry with medical cannabis, which sets patients up for failure.</li>
+                    <li>The end user should shape everything about the deliverable. The guide's format, wording, and emphasis on caution were a direct result of its audience: patients seeking clear, accurate information.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="project-row-name">Hemp and Decarbonization of the Built Environment</span>
+              <div class="accordion-trigger-right">
+                <span class="coming-soon">Coming soon</span>
+                <span class="accordion-icon" aria-hidden="true">+</span>
+              </div>
+            </button>
+            <div class="accordion-panel" hidden>
+              <div class="accordion-body">
+                <div class="prose-block">
+                  <span class="prose-label">Why</span>
+                  <p>
+                    Hemp is poorly understood, particularly when it comes to its positive
+                    environmental impact. This report laid out the policy case for both
+                    private sector investment and the easing of red tape to decarbonize
+                    the built environment with hemp.
+                  </p>
+                </div>
+                <div class="prose-block">
+                  <span class="prose-label">How</span>
+                  <p>
+                    In writing this report, I synthesized domestic and international
+                    regulations, scientific research, and case studies to build the case
+                    for hemp's place in the UK government's Net Zero agenda. This report
+                    was primarily tailored to Members of Parliament, particularly those
+                    with little knowledge about hemp.
+                  </p>
+                </div>
+                <div class="prose-block">
+                  <span class="prose-label">What I Learned</span>
+                  <ol class="learned-list">
+                    <li>Coming into this project knowing almost nothing about hemp, the research I undertook crafted my understanding of the plant's potential.</li>
+                    <li>Creative opportunities can fix real policy problems. The framing of hemp as a green alternative can bring about necessary licensing changes.</li>
+                  </ol>
                 </div>
               </div>
             </div>
@@ -278,22 +306,23 @@
           <div class="work-role">Research Assistant — Critical Civility Project</div>
           <div class="work-date">April 2024 — December 2024</div>
           <p class="role-description">
-            Qualitative research on the civic outcomes of Philosophy for Children programs,
-            as part of Dr. Suzanne Whitten's Critical Civility Project. Thematic analysis
-            of 200+ student surveys, co-authored publication, and conference organisation.
+            During my undergraduate degree, I worked as a research assistant for one of
+            my professors, Dr. Suzanne Whitten, who had piloted a philosophy with children
+            program in Northern Irish primary schools. This role involved deciphering the
+            impact of the program on democratic thinking.
           </p>
 
-          <span class="role-projects-label">Projects</span>
+          <span class="role-projects-label">Key Projects</span>
 
           <div class="accordion-item">
             <button class="accordion-trigger" aria-expanded="false">
-              <span class="project-row-name">Philosophy for Children and the Cultivation of Civic Reason</span>
+              <span class="project-row-name">Philosophy with Children Pilot</span>
               <div class="accordion-trigger-right">
                 <a href="#"
                    target="_blank" rel="noopener"
                    class="project-row-output-link"
                    onclick="event.stopPropagation()">
-                  Journal of Philosophy in Schools →
+                  Read Publication →
                 </a>
                 <span class="accordion-icon" aria-hidden="true">+</span>
               </div>
@@ -303,26 +332,26 @@
                 <div class="prose-block">
                   <span class="prose-label">Why</span>
                   <p>
-                    Dr. Suzanne Whitten's project asked whether teaching philosophy to
-                    children could improve democratic thinking and civic behaviour —
-                    a question with real downstream stakes for education policy and
-                    for what philosophy is actually for.
+                    Programs like P4C have shown real efficacy in cultivating positive
+                    social skills. This raises the question of whether such skills can
+                    increase democratic thinking and civic behavior, a question that holds
+                    special importance for post-conflict communities.
                   </p>
                 </div>
                 <div class="prose-block">
                   <span class="prose-label">How</span>
                   <p>
-                    Conducted a thematic analysis of 200+ primary school student surveys
-                    from a Philosophy for Children pilot program, assessing impact on
-                    civility and democratic engagement. Co-authored a paper with Dr. Whitten
-                    that was accepted by the <em>Journal of Philosophy in Schools</em>.
-                    Helped plan a conference in Belfast bringing together leading
-                    Philosophy for Children advocates.
+                    I completed a literature review on existing research, before
+                    co-conducting a thematic analysis of 200+ student surveys from the
+                    pilot. Our findings were published in the Journal of Philosophy in Schools.
                   </p>
                 </div>
                 <div class="prose-block">
-                  <span class="prose-label">What I learned</span>
-                  <p>[Placeholder — update with reflection when ready.]</p>
+                  <span class="prose-label">What I Learned</span>
+                  <ol class="learned-list">
+                    <li>There's something uniquely universal about philosophy, and kids bring creative perspectives to old philosophical problems.</li>
+                    <li>Academic research in philosophy can be practical and grounded, holding real-life implications beyond academia.</li>
+                  </ol>
                 </div>
               </div>
             </div>
@@ -336,34 +365,50 @@
   <footer>
     <div class="footer-inner">
       <span class="footer-copy">© 2026 Luke Strong</span>
-      <div class="footer-links">
-        <a href="mailto:lukestrong47@gmail.com">Email</a>
-        <a href="https://linkedin.com/in/lukestro" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="footer-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">◐</button>
+        <div class="footer-links">
+          <a href="mailto:lukestrong47@gmail.com">Email</a>
+          <a href="https://linkedin.com/in/lukestro" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
-    // Theme
-    const toggle = document.getElementById('themeToggle');
     const html = document.documentElement;
     const stored = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', stored);
-    toggle.textContent = stored === 'dark' ? '◐' : '◑';
-    toggle.addEventListener('click', () => {
+
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.textContent = stored === 'dark' ? '◐' : '◑';
+    themeToggle.addEventListener('click', () => {
       const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
-      toggle.textContent = next === 'dark' ? '◐' : '◑';
+      themeToggle.textContent = next === 'dark' ? '◐' : '◑';
     });
 
-    // Accordions
+    const hamburger = document.getElementById('navHamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('is-open');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      hamburger.classList.toggle('is-active', isOpen);
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.classList.remove('is-active');
+      });
+    });
+
     document.querySelectorAll('.accordion-trigger').forEach(btn => {
       btn.addEventListener('click', () => {
         const expanded = btn.getAttribute('aria-expanded') === 'true';
         btn.setAttribute('aria-expanded', String(!expanded));
-        const panel = btn.nextElementSibling;
-        panel.hidden = expanded;
+        btn.nextElementSibling.hidden = expanded;
       });
     });
   </script>
