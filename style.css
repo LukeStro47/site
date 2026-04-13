@@ -238,6 +238,7 @@ nav {
 
 .page-header--borderless {
   border-bottom: none;
+  margin-bottom: 0;
 }
 
 .page-header h1 {
